@@ -15,7 +15,7 @@ html {
 main {
     flex: 70%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%;
     flex-direction: column;
     align-content: center;
@@ -36,38 +36,81 @@ main {
     align-items: center;
     height: 25%;
    }
-  h2 {
-    color: #D1D3D4;
+  h2 { 
+    font-size: 40px;
+    padding: 0;
+    color: #f5f7f8;
     display: flex;
     padding: 40px;
-    justify-content: center;
+ 
    }
+   .wrapper1 {
+    display: flex;
+    float: left;
+    /* margin-right: -41px; */
+    width: 25%;
+    flex-direction: column;
+    justify-content: flex-start;
+   
+    
+   }
+
    .wrapper2 {
+    display: flex;
+    float: right;
+    width: 25%;
+    flex-direction: column;
+
+   }
+
+   .wrapper3 {
     display: flex;
     float: right;
     /* margin-right: -41px; */
     width: 25%;
     flex-direction: column;
-
+    justify-content: flex-start;
+    
+    
    }
    .main-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
     height: 40%;
     width: 85%;
     cursor: pointer;
 }
    .box {
     border: 10px;
-    height: 130px;
-    width: 130px;
+    height: 430px;
+    width: 300px;
     display: flex;
     flex-direction: row;
   }
    #box1 {
+    margin-top: 100px;
     background-color: #e652b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
    }
    #box2 {
+    margin-top: 40px;
     background-color: #e652b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
    }
+
+    .hover {
+    background-color: #EBC3A8;
+  }
+
+   .hidden {
+    display : none;
+   }
+   
