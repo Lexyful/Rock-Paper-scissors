@@ -105,6 +105,52 @@ main {
     align-items: center;
    
    }
+   .difficult-game-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 40%;
+    width: 85%;
+    cursor: pointer;
+    /* margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between; */
+
+   }
+
+
+   .classic-game-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 40%;
+    width: 85%;
+    cursor: pointer;
+    /* margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between; */
+
+   }
+
+   .scissors-icon{
+    width: 75px;
+    height: 75px;
+
+   }
+
+   .paper-icon {
+    width: 75px;
+    height: 75px;
+   }
+
+   .rock-icon {
+    width: 75px;
+    height: 75px;
+   }
 
     .hover {
     background-color: #EBC3A8;
