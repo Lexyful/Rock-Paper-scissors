@@ -1,5 +1,4 @@
-var human = new Player()
-var computer = new Player()
+var gameBoard = new Game()
 
 var pageDefault = document.querySelector(".wrapper2")
 var pageGameClassic = document.querySelector("#classicGame")
@@ -14,16 +13,15 @@ var iconDifficultPaper = document.querySelector(".difficult-paper-icon")
 var iconDifficultScissors = document.querySelector(".difficult-scissors-icon")
 var iconDifficultChick = document.querySelector(".difficult-chick-icon")
 var iconDifficultHotAirBalloon = document.querySelector(".difficult-hot-air-balloon-icon")
-var difficultWeapons = document.querySelector
+
 
 
 classicGame.addEventListener("click", renderClassicGameSection)
 
 difficultGame.addEventListener("click", renderDifficultGameSection)
 
-iconClassicRock.addEventListener('click', playGame('rock', classicWeapons))
 
-iconClassicRock.addEventListener('click', playGame('rock', classicWeapons))
+
 
 
 
@@ -32,8 +30,14 @@ iconClassicRock.addEventListener('click', playGame('rock', classicWeapons))
       pageDefault.classList.add("hidden")
       pageGameClassic.classList.remove("hidden")
       pageGameDifficult.classList.add("hidden")
-     
-      
+    }
+
+    function playClassicGame(fighter){
+      gameBoard.gameChoice = "Classic"
+      gameBoard.pickFighters()
+      gameBoard.getRandomWeapon()
+      gameBoard.human.chooseFighter(fighter)
+      gameBoard.computer.takeTurn(gameBoard)
     }
     
     function renderDifficultGameSection() {

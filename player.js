@@ -1,18 +1,21 @@
 class Player{
-    constructor(){
+    constructor(name, token){
         this.name = name
-        // this.token = token
+        this.token = token
         this.wins = 0
-        this.chosenFighter = chosenFighter
+        this.fighter 
+        this.currentChoice
+    }
+    takeTurn(gameBoard){
+      gameBoard.determineOutcome() 
+      }
+    
+    chooseFighter(fighter){
+        this.currentChoice = fighter 
     }
 }
 
-//     }
-//     takeTurn(event){
-//         this.currentChoice = event.target.id
-//     }
-// }
-  
+
   
 
 
