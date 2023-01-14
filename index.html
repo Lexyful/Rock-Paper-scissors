@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Playball&family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <title>Rock Paper Scisoors</title>
+    <title>Rock Paper Scissors</title>
   </head>
 </html>
 <body>
@@ -16,33 +16,40 @@
        </div>
     <main>
         <h1>Rock Paper Scissors</h1>
+        <h2>Choose Your Game!</h2>
         <div class="wrapper2">
             <section class="main-section">
                 <div class="box" id="box1">
                 <p class="icons" id="icons" >🪨 📝 ✂️</p>
-                <p class="classic-rock-scissors" id="rock-beats-scissors">Rock > Scissors</p>
-                <p class="classic-paper-rock" id="paper-beats-rock">Paper > Rock</p>
-                <p class="scissors-beats-paper" id="paper-beats-rock">Scissors > Paper</p>
+                <p class="classic-game-title">CLASSIC</p>
+                <p> Rock > Scissors </p>
+                <p> Paper > Rock </p>
+                <p> Scissors > Paper </p>
                 </div>
                 <div class="box" id="box2">
-                    <p class="icons" id="icons" >🪨 📝 ✂️</p>
-                    <p class="classic-rock-scissors" id="rock-beats-scissors">Rock > Scissors</p>
-                    <p class="classic-paper-rock" id="paper-beats-rock">Paper > Rock</p>
-                    <p class="scissors-beats-paper" id="paper-beats-rock">Scissors > Paper</p>
+                    <p class="icons" id="icons" >🪨 📝 ✂️ 🎈🐥 </p>
+                    <p class="classic-game-title">DIFFICULT</p>
+                    <p> Rock > Scissors & hot-air-balloon </p>
+                    <p> Paper > Rock & chick</p>
+                    <p> Scissors > Paper & hot-air-balloon </p>
+                    <p> hot-air-balloon > Paper & chick</p>
+                    <p> chick > Scissors & Rock </p>
                 </div>
             </section>
              </div>
             </main>
             <!-- <section class="game-page hidden" id="gamePage"> -->
-                <section class="hidden classic-game-view">
+                <section class="hidden classic-game-view" id="classicGame">
                 <img class="rock-icon" src="asteroid.png" alt="classic rock">
                 <img class="paper-icon" src="note (1).png" alt="classic paper icon">
                 <img class="scissors-icon" src="scissors.png" alt="classic scissors icon">
                 </section>  
                 <section class="hidden difficult-game-view">
-                    <img class="rock-icon" src="asteroid.png" alt="classic rock">
-                    <img class="paper-icon" src="note (1).png" alt="classic paper icon">
-                    <img class="scissors-icon" src="scissors.png" alt="classic scissors icon">
+                    <img class="difficult-rock-icon" src="asteroid.png" alt="difficult rock">
+                    <img class="difficult-paper-icon" src="note (1).png" alt="difficult paper icon">
+                    <img class="difficult-scissors-icon" src="scissors.png" alt="difficult scissors icon">
+                    <img class="difficult-chick-icon" src="chick.png" alt="difficult chick icon">
+                    <img class="difficult-hot-air-balloon-icon" src="hot-air-balloon.png" alt="difficult baloon icon">
                     </section>  
     <div class="wrapper3">
         <section class="computer-section">
@@ -51,8 +58,8 @@
           </div>
         </section>
        </div>
-           <script src="game.js"></script>
-           <script src="player.js"></script>
+       <script src="player.js"></script>
+       <script src="game.js"></script>
            <script src="main.js"></script>
           </body>
          </html>
