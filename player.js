@@ -1,20 +1,24 @@
+
+
 class Player{
     constructor(name, token){
         this.name = name
         this.token = token
         this.wins = 0
-        this.fighter 
+        // this.fighter 
         this.currentChoice
     }
     takeTurn(gameBoard){
+        
       gameBoard.determineOutcome() 
       }
     
     chosenFighter(event){
-        this.currentChoice = event.target.id
+     this.currentChoice = event.target.dataset.difficult || event.target.dataset.classic
+        // this.takeTurn(userChoice)
+
     }
 }
-
 
   
 

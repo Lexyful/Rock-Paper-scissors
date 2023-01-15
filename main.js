@@ -1,7 +1,7 @@
 var gameBoard = new Game()
 
 var pageDefault = document.querySelector(".wrapper2")
-var pageGameClassic = document.querySelector("#classicGame")
+var pageGameClassic = document.querySelector(".classic-game-view")
 var pageGameDifficult = document.querySelector(".difficult-game-view")
 var classicGame = document.querySelector("#box1")
 var classicFighters = document.querySelector("#classicFighters")
@@ -13,6 +13,7 @@ var fighter1 = document.querySelector("#fighterOne")
 var fighter2 = document.querySelector("#fighterTwo")
 var buttonChangeGame = document.querySelector("#changeGame")
 
+
 pageDefault.addEventListener("load",loadMainpaige)
 
 
@@ -20,9 +21,11 @@ classicGame.addEventListener("click", renderClassicGameSection)
 
 difficultGame.addEventListener("click", renderDifficultGameSection)
 
-classicFighters.addEventListener("click", playClassicGame)
+classicFighters.addEventListener("click",function(event){
+  playClassicGame(event)})
 
-difficultFighters.addEventListener("click", playDifficultGame)
+difficultFighters.addEventListener("click", function(event){
+  playDifficultGame(event)})
 
 buttonChangeGame.addEventListener("click", changeGame)
 
@@ -33,6 +36,7 @@ function loadMainpaige(){
   pageGameDifficult.classList.add("hidden")
   viewResultSection.classList.add("hidden")
   buttonChangeGame.classList.add("hidden")
+  playerCommand.innerText = "Choose your Game!"
 }
 
     
@@ -42,21 +46,26 @@ function loadMainpaige(){
       pageGameDifficult.classList.add("hidden")
       viewResultSection.classList.add("hidden")
       buttonChangeGame.classList.remove("hidden")
-      classicFighters.classList.remove = ("hidden")
+      classicFighters.classList.remove("hidden")
       playerCommand.innerText = "Choose your Fighter!"
 
     }
 
     function playClassicGame(event){
+      console.log(event)
       gameBoard.gameChoice = "Classic"
-      gameBoard.pickFighters()
+      pickClassicFighters()
       gameBoard.getRandomFighter()
       gameBoard.human.chosenFighter(event)
-      gameBoard.computer.takeTurn(gameBoard)
-      // updatePlayerCommand() 
-      viewOutcome()
+      gameBoard.human.takeTurn(gameBoard)
+      viewOutcome(event)
+      resetGame()
   
       buttonChangeGame.classList.remove("hidden")
+    }
+    function pickClassicFighters(){
+      gameBoard.pickFighters();
+      viewResultSection.classList.remove("hidden");
     }
     
     function renderDifficultGameSection() {
@@ -70,39 +79,56 @@ function loadMainpaige(){
     
     }
 
-    function playDifficultGame(fighter){
+    function playDifficultGame(event){
       gameBoard.gameChoice = "Difficult"
-      gameBoard.pickFighters()
+      pickDifficultFighters(event)
       gameBoard.getRandomFighter()
-      gameBoard.human.chosenFighter(fighter)
-      gameBoard.computer.takeTurn(gameBoard)
-      viewOutcome()
+      gameBoard.human.chosenFighter(event)
+      viewOutcome(event)
+      resetGame()
       buttonChangeGame.classList.remove("hidden")
     }
+    function pickDifficultFighters(event){
+      gameBoard.pickFighters();
+      // gameBoard.person.takeTurn();
+      gameBoard.getRandomFighter();
+      viewResultSection.classList.remove("hidden");
+    }
 
-    // function updatePlayerCommand() {
 
-    //    if(gameBoard.winner === "human"){
-    //   viewResultSection.innerHTML = `<img class="human-icon" src="girl.png"> Human </img>`;
-    //   humanWins.innerHTML = "Human Wins!"
-    // }else if(gameBoard.winner === "computer"){
-    //   viewResultSection.innerHTML = `<img class="human-token" src="robot.png"> Computer </img>`;
-    //   computerWins.innerHTML = "Computer Wins"
-    // }else {
-    //   viewResultSection.innerText = "Wah, Wah, Waaaaaaaaaaah...it's a Draw";
-    // }
+    function updatePlayerCommand() {
 
-  // }
+       if(gameBoard.winner === "human"){
+      viewResultSection.innerHTML = `<img class="human-icon" src="girl.png"> Human </img>`;
+      humanWins.innerHTML = "Human Wins!"
+    }else if(gameBoard.winner === "computer"){
+      viewResultSection.innerHTML = `<img class="human-token" src="robot.png"> Computer </img>`;
+      computerWins.innerHTML = "Computer Wins"
+    }else {
+      viewResultSection.innerText = "Wah, Wah, Waaaaaaaaaaah...it's a Draw";
+    }
 
-    function viewOutcome(){
-      fighter1.src = event.target.src
-      // fighter2.src = `<img id="${gameBoard.computerChoice}" src="./assets/${gameboard.computerChoice}png">
-      // </img>`
+  }
+
+    function viewOutcome(event){
+      console.log(gameBoard.human)
+      fighter1.src =`./assets/${gameBoard.human.currentChoice}.png`
+      fighter2.src = `./assets/${gameBoard.computerChoice}.png`
+      console.log(fighter2)
       classicFighters.classList.add("hidden");
       difficultFighters.classList.add("hidden");
       viewResultSection.classList.remove("hidden")
       
     }
+
+    function resetGame(){
+      if(gameBoard.gameChoice === "Classic"){
+        setTimeout(renderClassicGameSection, 3000);
+      } else if(gameBoard.gameChoice === "Difficult"){
+        setTimeout(renderDifficultGameSection, 3000);
+      }
+    }
+    
 
     function changeGame(){
       buttonChangeGame.classList.add("hidden")

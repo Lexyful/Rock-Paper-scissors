@@ -13,7 +13,7 @@ class Game {
 pickFighters(){
     if(this.gameChoice === "Classic"){
         this.fighters = ["rock", "paper", "scissors"];
-    }else if(this.gameChoice === "difficult")
+    }else if(this.gameChoice === "Difficult")
     {
         this.fighters = ["rock", "paper", "scissors", "chick", "hot-air-balloon"]
     }
@@ -28,8 +28,8 @@ getRandomFighter() {
 
 
 determineOutcome(){
-    // console.log(this.human.currentChoice, this.computerChoice)
-    // console.log( this.human.currentChoice === "rock" && this.computerChoice === "scissors")
+    console.log(this.human.currentChoice, this.computerChoice)
+    console.log( this.human.currentChoice === "rock" && this.computerChoice === "scissors")
     if(this.computerChoice === this.human.currentChoice){
         console.log("it's a tie")
       this.winner = "Wah, Wah, Waaaaaaaaaaah...it's a Draw"
@@ -45,14 +45,15 @@ determineOutcome(){
       (this.human.currentChoice === "chick" && this.computerChoice === "scissors") ||
       (this.human.currentChoice === "chick" && this.computerChoice === "rock") ) {
      console.log("human wins")
-        this.winner =  "human"
-      this.human.wins ++
+     this.winner = this.human
+     this.human.wins ++
     } else {
         console.log("computer wins")
-      this.winner = 'computer'
-      this.computer.wins ++
-      // console.log(this.computer.wins)
+        this.winner = this.compute
+        this.computer.wins ++
+      console.log(this.computer.wins)
     }
+    viewOutcome()
       
   }
 
