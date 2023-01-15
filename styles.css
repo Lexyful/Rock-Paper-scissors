@@ -36,7 +36,7 @@ main {
     align-items: center;
     height: 25%;
    }
-  h2 { 
+  .player-command { 
     font-size: 40px;
     padding: 0;
     color: #f5f7f8;
@@ -58,6 +58,11 @@ main {
     width: 25%;
     flex-direction: column;
     justify-content: flex-start;
+    font-size: 20px;
+    padding: 0;
+    color: #f5f7f8;
+    display: flex;
+    padding: 40px;
    
     
    }
@@ -77,6 +82,11 @@ main {
     width: 25%;
     flex-direction: column;
     justify-content: flex-start;
+    font-size: 20px;
+    padding: 0;
+    color: #f5f7f8;
+    display: flex;
+    padding: 40px;
     
     
    }
@@ -88,6 +98,7 @@ main {
     height: 40%;
     width: 85%;
     cursor: pointer;
+    
 }
    .box {
     border: 10px;
@@ -113,23 +124,24 @@ main {
    
    }
    .difficult-game-view {
-
-    margin-top: 400px;
+    
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    align-content: center;
     align-items: center;
 
    }
 
 
    .classic-game-view {
-  
-    margin-top: 400px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
 
-   }
+  }
 
    .scissors-icon{
     width: 200px;
@@ -156,7 +168,22 @@ main {
     height: 200px;
 
    }
-    .icon-hover {
+
+   .button-change-game{
+    width: 100px;
+    height: 50px;
+    background-color: #d0538b;
+    font-size: 10px;
+    padding: 0;
+    color: #f5f7f8;
+
+   }
+
+   .button-hover{
+    background-color: #EBC3A8;
+   }
+
+    .icon-hover{
     background-color: #EBC3A8;
   }
 
