@@ -10,8 +10,8 @@ class Player{
       gameBoard.determineOutcome() 
       }
     
-    chooseFighter(fighter){
-        this.currentChoice = fighter 
+    chosenFighter(event){
+        this.currentChoice = event.target.id
     }
 }
 

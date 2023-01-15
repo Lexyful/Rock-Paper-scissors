@@ -3,7 +3,7 @@ class Game {
         this.gameChoice
         this.human = new Player("human", "👩🏽")
         this.computer = new Player("computer", "🤖");
-        this.winner
+        this.winner = undefined 
         this.computerChoice = null
         this.fighters
         
@@ -21,15 +21,15 @@ pickFighters(){
 
 
 
-getRandomWeapon() {
+getRandomFighter() {
     this.computerChoice = this.fighters[Math.floor(Math.random() * this.fighters.length)]
     return this.computerChoice
 }
 
 
 determineOutcome(){
-    console.log(this.human.currentChoice, this.computerChoice)
-    console.log( this.human.currentChoice === "rock" && this.computerChoice === "scissors")
+    // console.log(this.human.currentChoice, this.computerChoice)
+    // console.log( this.human.currentChoice === "rock" && this.computerChoice === "scissors")
     if(this.computerChoice === this.human.currentChoice){
         console.log("it's a tie")
       this.winner = "Wah, Wah, Waaaaaaaaaaah...it's a Draw"
@@ -51,6 +51,7 @@ determineOutcome(){
         console.log("computer wins")
       this.winner = 'computer'
       this.computer.wins ++
+      // console.log(this.computer.wins)
     }
       
   }
