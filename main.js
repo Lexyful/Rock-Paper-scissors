@@ -12,6 +12,8 @@ var playerCommand = document.querySelector(".player-command")
 var fighter1 = document.querySelector("#fighterOne")
 var fighter2 = document.querySelector("#fighterTwo")
 var buttonChangeGame = document.querySelector("#changeGame")
+var computerWins = document.querySelector("#computerWinsCalculator")
+var humanWins = document.querySelector("#humanWinsCalculator")
 
 
 pageDefault.addEventListener("load",loadMainpaige)
@@ -84,33 +86,31 @@ function loadMainpaige(){
       pickDifficultFighters(event)
       gameBoard.getRandomFighter()
       gameBoard.human.chosenFighter(event)
-      viewOutcome(event)
+      gameBoard.human.takeTurn(gameBoard)
+      viewOutcome()
       resetGame()
       buttonChangeGame.classList.remove("hidden")
     }
-    function pickDifficultFighters(event){
+    function pickDifficultFighters(){
       gameBoard.pickFighters();
-      // gameBoard.person.takeTurn();
-      gameBoard.getRandomFighter();
       viewResultSection.classList.remove("hidden");
     }
 
 
     function updatePlayerCommand() {
-
-       if(gameBoard.winner === "human"){
-      viewResultSection.innerHTML = `<img class="human-icon" src="girl.png"> Human </img>`;
-      humanWins.innerHTML = "Human Wins!"
+      if(gameBoard.winner === "human" ){
+        playerCommand.innerHTML = `<img class="girl-icon" src="girl.png"> Human <img class="girl-icon" src="girl.png">`
     }else if(gameBoard.winner === "computer"){
-      viewResultSection.innerHTML = `<img class="human-token" src="robot.png"> Computer </img>`;
-      computerWins.innerHTML = "Computer Wins"
+      playerCommand.innerHTML  = `<img class="computer-icon" src="computer.png"> Computer <img class="computer-icon" src="computer.png">`
     }else {
-      viewResultSection.innerText = "Wah, Wah, Waaaaaaaaaaah...it's a Draw";
+      playerCommand.innerText = "Wah, Wah, Waaaaaaaaaaah...it's a Draw";
     }
 
   }
 
-    function viewOutcome(event){
+  
+
+    function viewOutcome(){
       console.log(gameBoard.human)
       fighter1.src =`./assets/${gameBoard.human.currentChoice}.png`
       fighter2.src = `./assets/${gameBoard.computerChoice}.png`
@@ -118,6 +118,8 @@ function loadMainpaige(){
       classicFighters.classList.add("hidden");
       difficultFighters.classList.add("hidden");
       viewResultSection.classList.remove("hidden")
+      updatePlayerCommand()
+      updateScore()
       
     }
 
@@ -128,6 +130,15 @@ function loadMainpaige(){
         setTimeout(renderDifficultGameSection, 3000);
       }
     }
+
+  function updateScore(){
+    if(gameBoard.winner === "human" ){
+      humanWins.innerText = gameBoard.human.wins
+  }else if(gameBoard.winner === "computer"){
+    computerWins.innerText  = gameBoard.computer.wins
+  }
+  }
+  
     
 
     function changeGame(){

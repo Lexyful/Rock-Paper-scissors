@@ -169,6 +169,17 @@ main {
 
    }
 
+   .girl-icon {
+    width: 100px;
+    height: 100px;
+
+   }
+
+   .computer-icon {
+    width: 100px;
+    height: 100px;
+   }
+
    .button-change-game{
     width: 100px;
     height: 50px;

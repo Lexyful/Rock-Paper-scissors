@@ -45,15 +45,14 @@ determineOutcome(){
       (this.human.currentChoice === "chick" && this.computerChoice === "scissors") ||
       (this.human.currentChoice === "chick" && this.computerChoice === "rock") ) {
      console.log("human wins")
-     this.winner = this.human
+     this.winner = "human"
      this.human.wins ++
     } else {
         console.log("computer wins")
-        this.winner = this.compute
+        this.winner = "computer"
         this.computer.wins ++
       console.log(this.computer.wins)
     }
-    viewOutcome()
       
   }
 
