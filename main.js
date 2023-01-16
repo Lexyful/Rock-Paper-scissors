@@ -50,7 +50,6 @@ function playClassicGame(event) {
   gameBoard.human.chosenFighter(event);
   gameBoard.human.takeTurn(gameBoard);
   viewOutcome(event);
-  resetGame();
   buttonChangeGame.classList.remove("hidden");
 }
 
@@ -71,12 +70,11 @@ function renderDifficultGameSection() {
 
 function playDifficultGame(event) {
   gameBoard.gameChoice = "Difficult";
-  pickDifficultFighters(event);
+  pickDifficultFighters();
   gameBoard.getRandomFighter();
   gameBoard.human.chosenFighter(event);
   gameBoard.human.takeTurn(gameBoard);
   viewOutcome();
-  resetGame();
   buttonChangeGame.classList.remove("hidden");
 }
     
@@ -102,7 +100,8 @@ function viewOutcome(){
   difficultFighters.classList.add("hidden");
   viewResultSection.classList.remove("hidden");
   updatePlayerCommand();
-  updateScore();    
+  updateScore();   
+  resetGame() 
 }
 
 function resetGame(){
@@ -121,17 +120,14 @@ function updateScore() {
     }
   }
   
-    
-
 function changeGame() {
   pageGameDifficult.classList.add("hidden");
   pageGameClassic.classList.add("hidden")
-  buttonChangeGame.classList.add("hidden");
   viewResultSection.classList.add("hidden");
-  pageDefault.classList.remove("hidden");
+  event.preventDefault
   loadMainpaige();   
 }
 
-  
+
 
     
