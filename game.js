@@ -1,38 +1,29 @@
 class Game {
-    constructor(){
-        this.gameChoice
-        this.human = new Player("human", "👩🏽")
+    constructor() {
+        this.gameChoice;
+        this.human = new Player("human", "👩🏽");
         this.computer = new Player("computer", "🤖");
-        this.winner = undefined 
-        this.computerChoice = null
-        this.fighters
-        
+        this.winner = undefined; 
+        this.computerChoice = null;
+        this.fighters;
     } 
 
-
-pickFighters(){
-    if(this.gameChoice === "Classic"){
+pickFighters() {
+    if (this.gameChoice === "Classic"){
         this.fighters = ["rock", "paper", "scissors"];
-    }else if(this.gameChoice === "Difficult")
-    {
-        this.fighters = ["rock", "paper", "scissors", "chick", "hot-air-balloon"]
+    } else if (this.gameChoice === "Difficult") {
+        this.fighters = ["rock", "paper", "scissors", "chick", "hot-air-balloon"];
     }
 }
 
-
-
 getRandomFighter() {
     this.computerChoice = this.fighters[Math.floor(Math.random() * this.fighters.length)]
-    return this.computerChoice
+    return this.computerChoice;
 }
 
-
-determineOutcome(){
-    console.log(this.human.currentChoice, this.computerChoice)
-    console.log( this.human.currentChoice === "rock" && this.computerChoice === "scissors")
-    if(this.computerChoice === this.human.currentChoice){
-        console.log("it's a tie")
-      this.winner = "Wah, Wah, Waaaaaaaaaaah...it's a Draw"
+determineOutcome() {
+    if (this.computerChoice === this.human.currentChoice){
+        this.winner = "...it's a Draw"
     }else if (
       (this.human.currentChoice === "rock" && this.computerChoice === "scissors") ||
       (this.human.currentChoice === "rock" && this.computerChoice === "hot-air-balloon") ||
@@ -44,16 +35,11 @@ determineOutcome(){
       (this.human.currentChoice === "hot-air-balloon" && this.computerChoice === "chick") ||
       (this.human.currentChoice === "chick" && this.computerChoice === "scissors") ||
       (this.human.currentChoice === "chick" && this.computerChoice === "rock") ) {
-     console.log("human wins")
-     this.winner = "human"
-     this.human.wins ++
+        this.winner = "human"
+        this.human.wins ++
     } else {
-        console.log("computer wins")
         this.winner = "computer"
         this.computer.wins ++
-      console.log(this.computer.wins)
-    }
-      
+    }   
   }
-
 }
