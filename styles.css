@@ -1,202 +1,125 @@
-/* html {
-    font-family: 'Michroma', sans-serif;
-    height: 100%;
-    width: 100%;
-    flex-wrap: wrap;
-   } */
+* {
+    font-family: American Typewriter, serif
+  }
+
   body {
- 
+    width: 100vw;
+    height: 100%;
+    display: flex;
     background: rgb(241, 190, 216);
     display: flex;
     flex-direction: row;
- 
-  
-}
-/* main {
-
-    display: flex;
-    justify-content: flex-start;
-    height: 100%;
-    flex-direction: column;
-    align-content: center;
- 
-    } */
-    .main-section {
-      display: flex;
-      justify-content: flex-start;
-      align-content: center;
-      flex-direction: column;
-      cursor: pointer;
-      
   }
 
-
-
+  main {
+    display: flex;
+    height:100vh;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   h1 {
+    margin-top: 30px;
     font-size: 60px;
-    padding: 0;
     margin: 0;
     color: #5fa0c0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-   
-   }
+    flex-direction: row;
+    justify-content: center; 
+  }
+
   .player-command { 
     font-size: 40px;
-    padding: 0;
+    padding: 10px;
     color: #f5f7f8;
     display: flex;
+    flex-direction: row;
+  }
 
-    
- 
-   }
-
-   title {
-    font-size: 20px;
-    color: #f5f7f8;
-
-   }
-
-   .wrapper1 {
-    display: flex;
-    float: left;
-    /* margin-right: -41px; */
-    width: 25%;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 20px;
-    padding: 0;
-    color: #f5f7f8;
-    display: flex;
-    padding: 40px;
-   
-    
-   }
-
-   .wrapper2 {
+  .wrapper1 {
+    height: 100vh;
+    width: 20%;
     display: flex;
     flex-direction: column;
-
-   }
-
-   .wrapper3 {
-    display: flex;
-    float: right;
-    /* margin-right: -41px; */
-    width: 25%;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 20px;
-    padding: 0;
+    align-items: center;
+    border-radius: 25px;
+    border: 20px double #f9f7f6;
     color: #f5f7f8;
-    display: flex;
     padding: 40px;
   }
 
-   /* .box {
-    border: 10px;
-    height: 430px;
-    width: 300px;
+  .wrapper2 {
     display: flex;
-    flex-direction: row;
-  } */
-   .box {
-    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+  }
+
+  .wrapper3 {
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: 20px double #f9f7f6;
+    color: #f5f7f8;
+    padding: 40px;
+  }
+
+  .box {
     height: 350px;
     width: 300px;
-    background-color: #e652b2;
+    background-color: #e44b90;
+    font-size: 16px;
+    color: #f5f7f8;
     display: flex;
     flex-direction: column;
     align-items: center;
-   }
- 
-   /* }
-   #box2 {
-    margin-top: 40px;
-    background-color: #e652b2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
-   } */
-   /* .difficult-game-view {
+    margin-top: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .classic-game-view,
+  .difficult-game-view {
+    padding: 20px;
     
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-
-   }
-
-
-   .classic-game-view {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-
-  } */
-
-   .scissors-icon{
+  }
+ 
+  .classic-fighers,
+  .difficult-fighers {
     width: 200px;
     height: 200px;
+    cursor: pointer;
+  }
 
-   }
+  .girl-icon {
+    width: 75px;
+    height: 75px;
+  }
 
-   .paper-icon {
-    width: 200px;
-    height: 200px;
-   }
+  .computer-icon {
+    width: 75px;
+    height: 75px;
+  }
 
-   .rock-icon {
-    width: 200px;
-    height: 200px;
-   }
-   .difficult-chick-icon {
-    width: 200px;
-    height: 200px;
-   }
-
-   .difficult-hot-air-balloon-icon{
-    width: 200px;
-    height: 200px;
-
-   }
-
-   .girl-icon {
-    width: 100px;
-    height: 100px;
-
-   }
-
-   .computer-icon {
-    width: 100px;
-    height: 100px;
-   }
-
-   .button-change-game{
+  .button-change-game{
     width: 100px;
     height: 50px;
     background-color: #d0538b;
     font-size: 10px;
     padding: 0;
     color: #f5f7f8;
+    cursor: pointer;
+  }
 
-   }
-
-   .button-hover{
-    background-color: #EBC3A8;
-   }
-
-    .icon-hover{
+  button:hover{
     background-color: #EBC3A8;
   }
 
-
-   .hidden {
+  .hidden {
     display : none;
-   }
+  }
    

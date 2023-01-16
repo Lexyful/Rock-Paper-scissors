@@ -1,81 +1,72 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Playfair+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Rock Paper Scissors</title>
-  </head>
-</html>
-<body>
-    <div class="wrapper1">
-        <section class="human-section">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Playball&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body> 
+        <aside class="wrapper1" id="wrap1">
+            <section class="human-section">
             <img class="girl-icon" id=girlIcon src="girl.png" alt="girl">
             <h2>Human</h2>
-            <div class="left-section">
-              <h3>wins:<span class="human-wins" id="humanWinsCalculator"></span></h3>
-              <button class="hidden button-change-game" id="changeGame">Change Game</button>
-          </div>
-        </section>
-       </div>
-    <main>
-        <h1>Rock Paper Scissors</h1>
-        <h2 class="player-command" id="playerCommand">Choose Your Game!</h2>
-        <h3 class="tag-line1"></h3>
-        <div class="wrapper2">
-            <section class="main-section">
+            <h3>wins:<span class="human-wins" id="humanWinsCalculator"></span></h3>
+            <button class="hidden button-change-game" id="changeGame">Change Game</button>
+            </section>
+        </aside>
+        <main>
+            <h1>Rock Paper Scissors</h1>
+            <h1 class="player-command" id="playerCommand">Choose Your Game!</h1>
+            <h1 class="tag-line1"></h1>
+            <container class="wrapper2" id="wrap2">
                 <div class="box" id="box1">
-                <p class="icons" id="icons" >🪨 📝 ✂️</p>
-                <p class="classic-game-title">CLASSIC</p>
-                <p> Rock > Scissors </p>
-                <p> Paper > Rock </p>
-                <p> Scissors > Paper </p>
+                    <p class="icons" id="icons" >🪨 📝 ✂️</p>
+                    <p class="classic-game-title">CLASSIC</p>
+                    <p> Rock > Scissors </p>
+                    <p> Paper > Rock </p>
+                    <p> Scissors > Paper </p>
                 </div>
                 <div class="box" id="box2">
                     <p class="icons" id="icons" >🪨 📝 ✂️ 🎈🐥 </p>
-                    <p class="classic-game-title">DIFFICULT</p>
+                    <p class="difficult-game-title">DIFFICULT</p>
                     <p> Rock > Scissors & hot-air-balloon </p>
                     <p> Paper > Rock & chick</p>
                     <p> Scissors > Paper & hot-air-balloon </p>
                     <p> hot-air-balloon > Paper & chick</p>
                     <p> chick > Scissors & Rock </p>
                 </div>
-            </section>
-             </div>
-            <!-- <section class="game-page hidden" id="gamePage"> -->
-                <section class="hidden classic-game-view" id="classicGame">
+            </container>
+            <section class="hidden classic-game-view" id="classicGame">
                 <container class="classic-fighers" id="classicFighters">
-                <img class="classic-rock-icon" data-classic="rock" src="./assets/rock.png" alt="classic rock">
-                <img class="classic-paper-icon" data-classic="paper" src="./assets/paper.png" alt="classic paper icon">
-                <img class="classic-scissors-icon" data-classic="scissors" src="./assets/scissors.png" alt="classic scissors icon">
+                    <img class="classic-rock-icon" data-classic="rock" src="./assets/rock.png" alt="classic rock">
+                    <img class="classic-paper-icon" data-classic="paper" src="./assets/paper.png" alt="classic paper icon">
+                    <img class="classic-scissors-icon" data-classic="scissors" src="./assets/scissors.png" alt="classic scissors icon">
                 </container>
-                </section>  
-                <section class="hidden difficult-game-view" id="difficultGame">
-                    <container class="difficult-fighers" id="difficultFighters">
+            </section>  
+            <section class="hidden difficult-game-view" id="difficultGame">
+                <container class="difficult-fighers" id="difficultFighters">
                     <img class="difficult-rock-icon" data-difficult="rock" src="./assets/rock.png" alt="difficult rock">
                     <img class="difficult-paper-icon" data-difficult="paper" src="./assets/paper.png" alt="difficult paper icon">
                     <img class="difficult-scissors-icon" data-difficult="scissors" src="./assets/scissors.png" alt="difficult scissors icon">
                     <img class="difficult-chick-icon" data-difficult="chick" src="./assets/chick.png" alt="difficult chick icon">
-                    <img class="difficult-hot-air-balloon-icon" id=difficultHotAirBalloon src="./assets/hot-air-balloon.png" alt="difficult balloon icon">
-                    </container>
-                    </section>  
-                    <section class="hidden view-outcome-section" id="viewOutcomeSection">
-                        <img class="fighter1" id="fighterOne" src="">
-                        <img class="fighter2" id="fighterTwo" src="">
-                        </section>
-                </main>
-    <div class="wrapper3">
-        <section class="computer-section">
-            <img class="computer-icon" id=computerIcon src="computer.png" alt="girl">
-            <h2>Computer </h2>
-          <div class="left-section">
-            <h3>wins:<span class="computer-wins" id="computerWinsCalculator"></span></h3>
-          </div>
-        </section>
-       </div>
-       <script src="player.js"></script>
-       <script src="game.js"></script>
-           <script src="main.js"></script>
-          </body>
-         </html>
-</body>
+                    <img class="difficult-hot-air-balloon-icon" data-difficult="hot-air-balloon" src="./assets/hot-air-balloon.png" alt="difficult balloon icon">
+                </container>
+            </section>  
+            <section class="hidden view-outcome-section" id="viewOutcomeSection">
+                <img class="human-player" id="humanP" src="">
+                <img class="computer-player" id="computerP" src="">
+            </section>
+        </main>
+        <aside class="wrapper3" id="wrap3">
+            <section class="computer-section">
+                <img class="computer-icon" id=computerIcon src="computer.png" alt="computer">
+                <h2>Computer </h2>
+                <h3>wins:<span class="computer-wins" id="computerWinsCalculator"></span></h3>
+            </section>
+        </asider>
+        <script src="player.js"></script>
+        <script src="game.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
     
