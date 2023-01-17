@@ -16,7 +16,6 @@ var humanWins = document.querySelector("#humanWinsCalculator");
 var computerPlayer = document.querySelector("#computerP");
 var computerWins = document.querySelector("#computerWinsCalculator");
 
-
 pageDefault.addEventListener("load",loadMainpaige);
 classicGame.addEventListener("click", renderClassicGameSection);
 difficultGame.addEventListener("click", renderDifficultGameSection);
@@ -39,9 +38,9 @@ function renderClassicGameSection() {
   pageGameClassic.classList.remove("hidden");
   viewResultSection.classList.add("hidden");
   buttonChangeGame.classList.remove("hidden");
+  buttonChangeGame.removeAttribute("disabled")
   difficultFighters.classList.add("hidden");
   classicFighters.classList.remove("hidden");
-  buttonChangeGame.setAttribute("disabled")
   playerCommand.innerText = "Choose your Fighter!";
 }
 
@@ -51,8 +50,8 @@ function playClassicGame(event) {
   gameBoard.getRandomFighter();
   gameBoard.human.chosenFighter(event);
   gameBoard.human.takeTurn(gameBoard);
+  buttonChangeGame.setAttribute("disabled", true)
   viewOutcome();
-  buttonChangeGame.classList.remove("hidden");
 }
 
 function pickClassicFighters() {
@@ -65,9 +64,9 @@ function renderDifficultGameSection() {
   pageGameDifficult.classList.remove("hidden");
   viewResultSection.classList.add("hidden");
   buttonChangeGame.classList.remove("hidden");
+  buttonChangeGame.removeAttribute("disabled")
   classicFighters.classList.add("hidden");
   difficultFighters.classList.remove("hidden");
-  buttonChangeGame.setAttribute("disabled")
   playerCommand.innerText = "Choose your Fighter!";
 }
 
@@ -77,8 +76,8 @@ function playDifficultGame(event) {
   gameBoard.getRandomFighter();
   gameBoard.human.chosenFighter(event);
   gameBoard.human.takeTurn(gameBoard);
+  buttonChangeGame.setAttribute("disabled", true)
   viewOutcome();
-  buttonChangeGame.classList.remove("hidden");
 }
     
 function pickDifficultFighters() {
@@ -105,9 +104,7 @@ function viewOutcome(){
   updatePlayerCommand();
   updateScore();
   resetGame() 
-  buttonChangeGame.removeAttribute("disabled")
 }
-
 
 function resetGame() {
   if (gameBoard.gameChoice === "Classic") {
@@ -122,7 +119,7 @@ function updateScore() {
     humanWins.innerText = gameBoard.human.wins;
   } else if (gameBoard.winner === "computer") {
     computerWins.innerText  = gameBoard.computer.wins;
-    }
+  }  
   }
  
   function changeGame() {
