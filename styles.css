@@ -1,48 +1,47 @@
-* {
+  * {
     font-family: American Typewriter, serif
   }
 
-  body {
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    background: rgb(241, 190, 216);
+  body {  
     display: flex;
     flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+    background: rgb(241, 190, 216);
   }
 
   main {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     height:100vh;
     width: 60%;
-    flex-direction: column;
-    align-items: center;
   }
   
   h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
     margin-top: 30px;
     font-size: 60px;
     margin: 0;
     color: #5fa0c0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
   }
 
   .player-command { 
+    display: flex;
+    flex-direction: row;
     font-size: 40px;
     padding: 10px;
     color: #f5f7f8;
-    display: flex;
-    flex-direction: row;
   }
 
   .wrapper1 {
-    height: 100vh;
-    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    width: 15%;
     border-radius: 25px;
     border: 20px double #f9f7f6;
     color: #f5f7f8;
@@ -57,11 +56,11 @@
   }
 
   .wrapper3 {
-    height: 100vh;
-    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    width: 15%;
     border-radius: 25px;
     border: 20px double #f9f7f6;
     color: #f5f7f8;
@@ -69,13 +68,13 @@
   }
 
   .box {
-    height: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
     width: 300px;
     background-color: #e44b90;
     font-size: 16px;
     color: #f5f7f8;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 20px;
     border-radius: 25px;
@@ -84,14 +83,13 @@
 
   .classic-game-view,
   .difficult-game-view {
-    padding: 20px;
-    
+    padding: 30px;
   }
  
   .classic-fighers,
   .difficult-fighers {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
   }
 
@@ -105,17 +103,17 @@
     height: 75px;
   }
 
-  .button-change-game{
+  .button-change-game {
     width: 100px;
     height: 50px;
     background-color: #d0538b;
-    font-size: 10px;
+    font-size: 15px;
     padding: 0;
     color: #f5f7f8;
     cursor: pointer;
   }
-
-  button:hover{
+  
+  button:hover {
     background-color: #EBC3A8;
   }
 
