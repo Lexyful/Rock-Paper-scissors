@@ -31,6 +31,7 @@ function loadMainpaige() {
   pageDefault.classList.remove("hidden");
   buttonChangeGame.classList.add("hidden");
   playerCommand.innerText = "Choose your Game!";
+
 }
 
 function renderClassicGameSection() {
@@ -40,6 +41,7 @@ function renderClassicGameSection() {
   buttonChangeGame.classList.remove("hidden");
   difficultFighters.classList.add("hidden");
   classicFighters.classList.remove("hidden");
+  buttonChangeGame.setAttribute("disabled")
   playerCommand.innerText = "Choose your Fighter!";
 }
 
@@ -49,7 +51,7 @@ function playClassicGame(event) {
   gameBoard.getRandomFighter();
   gameBoard.human.chosenFighter(event);
   gameBoard.human.takeTurn(gameBoard);
-  viewOutcome(event);
+  viewOutcome();
   buttonChangeGame.classList.remove("hidden");
 }
 
@@ -65,6 +67,7 @@ function renderDifficultGameSection() {
   buttonChangeGame.classList.remove("hidden");
   classicFighters.classList.add("hidden");
   difficultFighters.classList.remove("hidden");
+  buttonChangeGame.setAttribute("disabled")
   playerCommand.innerText = "Choose your Fighter!";
 }
 
@@ -85,9 +88,9 @@ function pickDifficultFighters() {
 
 function updatePlayerCommand() {
   if (gameBoard.winner === "human" ) {
-      playerCommand.innerHTML = `<img class="girl-icon" src="girl.png"> Human <img class="girl-icon" src="girl.png">`;
+      playerCommand.innerHTML = `<img class="girl-icon" src="girl.png"> Human Wins<img class="girl-icon" src="girl.png">`;
   } else if (gameBoard.winner === "computer") {
-      playerCommand.innerHTML  = `<img class="computer-icon" src="computer.png"> Computer <img class="computer-icon" src="computer.png">`;
+      playerCommand.innerHTML  = `<img class="computer-icon" src="computer.png"> Computer Wins<img class="computer-icon" src="computer.png">`;
   } else {
       playerCommand.innerText = "...it's a Draw";
     }
@@ -100,16 +103,18 @@ function viewOutcome(){
   difficultFighters.classList.add("hidden");
   viewResultSection.classList.remove("hidden");
   updatePlayerCommand();
-  updateScore();   
+  updateScore();
   resetGame() 
+  buttonChangeGame.removeAttribute("disabled")
 }
 
-function resetGame(){
+
+function resetGame() {
   if (gameBoard.gameChoice === "Classic") {
-      setTimeout(renderClassicGameSection, 3000);
+    setTimeout(renderClassicGameSection, 3000);
   } else if (gameBoard.gameChoice === "Difficult") {
-    setTimeout(renderDifficultGameSection, 3000);
-    }
+   setTimeout(renderDifficultGameSection, 3000);
+    } 
   }
 
 function updateScore() {
@@ -119,13 +124,12 @@ function updateScore() {
     computerWins.innerText  = gameBoard.computer.wins;
     }
   }
-  
-function changeGame() {
+ 
+  function changeGame() {
   pageGameDifficult.classList.add("hidden");
   pageGameClassic.classList.add("hidden")
   viewResultSection.classList.add("hidden");
-  event.preventDefault
-  loadMainpaige();   
+  loadMainpaige();  
 }
 
 
