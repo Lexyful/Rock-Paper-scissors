@@ -6,6 +6,8 @@ The application is to play Rock, Paper, Scissors. If someone wants to play the g
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 Open up the terminal and paste the SSH code after typing git clone in the terminal. Next enter the repesitory with the cd command. Then type code . and the code will come up in the text editer. Then in the terminal type open index.html and the application will open in the browser.
+https://lexyful.github.io/Rock-Paper-scissors/
+
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
